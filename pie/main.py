@@ -29,14 +29,14 @@ def stop():
 
 # left
 @app.route('/l', methods=['GET'])
-def forward():
+def left():
     left.on()
     right.off()
     return True
 
 # right
 @app.route('/r', methods=['GET'])
-def forward():
+def right():
     left.off()
     right.on()
     return True
