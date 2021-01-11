@@ -3,38 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Poptart-Mobile Controller</title>
+
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .img-container {
+      float: left;
+      padding: 5px;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
 </head>
 <body>
 
-<img src="images/placeholder.png">
+<div class="clearfix">
 
-<form action="/forward" method="post">
-    <button name="forwardBtn" type="submit">
-        <img src="images/forward.png">
-    </button>
-</form>
-
-<img src="images/placeholder.png">
+    <div class="img-container">
+        <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/placeholder.png">
+    </div>
+    <div class="img-container">
+        <form action="/forward" method="post">
+            <button name="forwardBtn" type="submit">
+                <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/forward.png">
+            </button>
+        </form>
+    </div>
+    <div class="img-container">
+        <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/placeholder.png">
+    </div>
+</div>
 <br>
 
 
-<form action="/left" method="post">
-    <button name="leftBtn" type="submit">
-        <img src="images/left.png">
-    </button>
-</form>
+<div class="clearfix">
+    <div class="img-container">
+        <form action="/left" method="post">
+            <button name="leftBtn" type="submit">
+                <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/left.png">
+            </button>
+        </form>
+    </div>
 
-<form action="/stop" method="post">
-    <button name="stopBtn" type="submit">
-        <img src="images/stop.png">
-    </button>
-</form>
+    <div class="img-container">
+        <form action="/stop" method="post">
+            <button name="stopBtn" type="submit">
+                <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/stop.png">
+            </button>
+        </form>
+    </div>
 
-<form action="/right" method="post">
-    <button name="rightBtn" type="submit">
-        <img src="images/right.png">
-    </button>
-</form>
+    <div class="img-container">
+        <form action="/right" method="post">
+            <button name="rightBtn" type="submit">
+                <img src="https://raw.githubusercontent.com/ethanrasmussen/poptart-mobile/master/website/images/right.png">
+            </button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
