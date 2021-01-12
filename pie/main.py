@@ -8,6 +8,8 @@ import gpiozero as gz
 # motor assignment
 FRONT_L_MOTOR = gz.OutputDevice(27)
 FRONT_R_MOTOR = gz.OutputDevice(17)
+BACK_L_MOTOR = gz.OutputDevice(22)
+BACK_R_MOTOR = gz.OutputDevice(23)
 
 # init Flask app
 app = Flask(__name__)
@@ -16,8 +18,12 @@ app = Flask(__name__)
 # forward
 @app.route('/f', methods=['GET'])
 def forward():
-    FRONT_L_MOTOR.on()
-    FRONT_R_MOTOR.on()
+    # turn off front
+    FRONT_L_MOTOR.off()
+    FRONT_R_MOTOR.off()
+    # turn on back
+    BACK_L_MOTOR.on()
+    BACK_R_MOTOR.on()
     return True
 
 # stop
@@ -25,20 +31,22 @@ def forward():
 def stop():
     FRONT_L_MOTOR.off()
     FRONT_R_MOTOR.off()
+    BACK_L_MOTOR.off()
+    BACK_R_MOTOR.off()
     return True
 
 # left
 @app.route('/l', methods=['GET'])
 def left():
-    FRONT_L_MOTOR.on()
-    FRONT_R_MOTOR.off()
+    FRONT_L_MOTOR.off()
+    FRONT_R_MOTOR.on()
     return True
 
 # right
 @app.route('/r', methods=['GET'])
 def right():
-    FRONT_L_MOTOR.off()
-    FRONT_R_MOTOR.on()
+    FRONT_L_MOTOR.on()
+    FRONT_R_MOTOR.off()
     return True
 
 
